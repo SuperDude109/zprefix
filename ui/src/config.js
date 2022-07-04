@@ -5,7 +5,7 @@ const config = {
     },
 
     production: {
-        apiUrl: "https://zprebackup.herokuapp.com/"
+        apiUrl: "https://bsdi-poc-api.herokuapp.com"
     },
     test: {
         apiUrl: ''
