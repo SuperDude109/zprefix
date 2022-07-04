@@ -1,25 +1,24 @@
-import React, { useEffect, useState} from 'react';
-import config from './config'
+// import { useEffect, useState} from 'react';
+import React from 'react';
+import SideBar from './components/SideBar';
+import TopBar from './components/TopBar';
+import ContentViewer from './components/ContentViewer/ContentViewer';
+import { AppProvider } from "./contexts/AppContext";
 
-const ApiUrl = config[process.env.REACT_APP_NODE_ENV || "development"].apiUrl;
 
 function App() {
 
-  let [names, setNames] = useState([ ]);
-
-  useEffect(() => {
-    fetch(ApiUrl + "/authors")
-      .then(response => response.json())
-      .then(data => setNames(data))
-      .catch(err => console.log(err))
-  }, []);
-
-
   return (
-    <div>
-      App is running - good work: 
-      { names.map(author => author.firstName + " ")}
-    </div>
+    <AppProvider>
+      <div className='webpage' style={{display:"inline-flex"}}> 
+          {/* this will be where the sidebar lays */}
+          <SideBar/>
+          <div className='content' style={{padding:".5vw", display:"table-column" }}>
+            <TopBar/>
+            <ContentViewer/>
+          </div>
+       </div>
+    </AppProvider>
   );
 }
 
