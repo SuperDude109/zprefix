@@ -1,0 +1,26 @@
+.section-content{
+  background:lightgray;
+   display:"flex";
+   flex-direction:"column";
+   flex-wrap:"nowrap";
+   padding: 1%;
+}
+.section-content:hover{
+  background:darkgray;
+}
+.section-title{
+  background: silver;
+  padding: 1%;
+}
+
+
+.sidebar{
+  height:"95vh";
+  width:"10vw";
+  background:"Grey";
+  padding:"1vw";
+}
+
+
+
+

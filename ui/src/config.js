@@ -1,11 +1,11 @@
 
 const config = {
     development: {
-        apiUrl: "http://localhost:8080"
+        apiUrl: "http://localhost:8082"
     },
 
     production: {
-        apiUrl: "https://zprebackup.herokuapp.com/"
+        apiUrl: "https://zprebackup.herokuapp.com"
     },
     test: {
         apiUrl: ''

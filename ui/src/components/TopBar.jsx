@@ -5,15 +5,15 @@ import { useContext } from "react";
 import { Route, Routes } from 'react-router-dom';
 // import config from './config'
 
-// const ApiUrl = config[process.env.REACT_APP_NODE_ENV || "development"].apiUrl;
-
+// const ApiUrl = config[process.env.REACT_APP_NODE_ENV || "development"].apiUr
+import "./TopBar.css"
 
 function TopBar() {
   let {values} = useContext(AppContext)
   let {username} = values
   return (
-    <div className='topbar' style={{background:"DarkGrey", width:"85vw",height:"4vh"}}>
-      <div>{`Welcome ${(username.length>1)?username:"Guest"}!`}</div>
+    <div className='topbar'>
+      <div className="greeting">{`Welcome ${(username.length>1)?username:"Guest"}!`}</div>
       <Routes>
         <Route path='/user/posts' element={<div>double click to delete</div>} />
       </Routes>

@@ -7,48 +7,61 @@ import { useContext } from "react";
 
 // const ApiUrl = config[process.env.REACT_APP_NODE_ENV || "development"].apiUrl;
 
+import "./SideBar.css"
 
 function SideBar() {
   let {values} = useContext(AppContext)
   let {loggedin} = values
   return (
-    <div className='sidebar' style={{height:"95vh", width:"10vw", background:"Grey", padding:"1vw"}}>
-    sidebar
+    <div className='sidebar'>
+    Navigation Bar
     {/* height = 95vh width=10vw*/}
     <div className='username'>
-      username
     </div>
     {/* will be a map of sections */}
-    <div className='section'>
-      section
-      {/* will be a div of section title */}
-      <div className='section-title'>
-        section-title
-      </div>
-      <div className='section-content'>
-        section-content
-        {/* will have a map of all the content */}
-      </div>
-      <div className='section'style={{background:"hotpink"}}>
+      <div className='section'>
         <div className='section-title' >
-          Navigate
+          Links
         </div>
-        <div className='section-content'style={{background:"pink", display:"flex",flexDirection:"column",flexWrap:"nowrap" }}>
+        <div className='section-content'>
           <nav>
             <Link to="/">Home</Link> <div/>
+          </nav>
+          </div>
+          <div className='section-content'>
+          <nav>
             <Link to="/user/posts">{(loggedin)?"My Posts":" "}</Link><div/>
+          </nav>
+          </div>
+          <div className='section-content'>
+          <nav>
             <Link to="/create/post">{(loggedin)?" New Post":" "}</Link><div/>
+          </nav>
+          </div>
+          <div className='section-content'>
+          <nav>
             <Link to="/create/user">{(loggedin)?"":"New User?"}</Link><div/>
+          </nav>
+          </div>
+          <div className='section-content'>
+          <nav>
             <Link to="/user">{(loggedin)?"My Info":""}</Link><div/>
+          </nav>
+          </div>
+          <div className='section-content'>
+          <nav>
             <Link to="/login">{(loggedin)?"Sign Off":"Log In"}</Link><div/>
-            
+          </nav>
+          </div>
+          <div className='section-content'>
+          <nav>
             <Link to=""> </Link><div/>
           </nav>
+          </div>
           {/* will have a map of all the content */}
         </div>
       </div>
-    </div>
-  </div>
+    
   );
 }
 

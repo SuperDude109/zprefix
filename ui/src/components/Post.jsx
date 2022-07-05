@@ -25,7 +25,6 @@ function Post({user_id,title,content}) {
       setDisplayedText(
         expand?
         (<textarea id="editcontent" //default value is preventing us from showing all of the text from content
-            style={{padding:"0.5%",minHeight:"2vh",width:"95%" }} 
             placeholder="Type your post here" 
             rows="16" 
             value={message.substring(0,100) + (expand?
@@ -35,7 +34,6 @@ function Post({user_id,title,content}) {
             onChange={(evt) => setMesssage(evt.target.value)}
         />)://or we create a read only text field
         (<textarea id="content" 
-            style={{padding:"0.5%",minHeight:"2vh",width:"95%" }} 
             placeholder="Type your post here" 
             rows="16" 
             value={message.substring(0,100) + (expand?
@@ -49,9 +47,8 @@ function Post({user_id,title,content}) {
   ,[expand,message])
   
   return (
-    <div className='post' style={{background:"grey",padding:"1%"}}>
-      
-      <div id="titlebar" style={{width:"95%",display:"flex",justifyContent:"space-around", background:"darkgrey",padding:"0.5%"}}>
+    <div className='post'>
+      <div id="titlebar">
         <div id = "title">title:{title}</div>
         <div>username:{username}</div>
       </div>
